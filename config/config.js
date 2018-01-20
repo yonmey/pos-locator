@@ -3,6 +3,8 @@ const Config = {
     apiKey: "",
     language: "fr",
     libraries: ["geometry", "places"],
+    initalCoordinates: { lat: 46, lng: 2 },
+    initialZoom: 6,
     markers: {
       url:
         "https://datanova.legroupe.laposte.fr/api/records/1.0/search/?dataset=base-de-donnees-locales-guichets-publics-locaux-organismes&rows=3000&facet=typeorga&facet=editeur&facet=accestype&facet=codepost&facet=datemaj&facet=departement",
