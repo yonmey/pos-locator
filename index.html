@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <style>
+    .searchbar {
+      text-align: center;
+      margin: 20px 0px;
+    }
+
+    #search {
+      border: 2px solid #f6f8f8;
+      padding: 10px;
+      border-radius: 10px 0px 0px 10px;
+      float: left;
+    }
+
+    #geolocator {
+      border: 2px solid #f6f8f8;
+      border-radius: 0px 10px 10px 0px;
+      float: left;
+      padding: 10px 15px;
+      background-color: #f6f8f8;
+    }
+
+    .location-icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    #map {
+      height: 700px;
+      border-radius: 10px 0px 0px 10px;
+    }
+
+    #panel {
+      height: 700px;
+      background-color: #f6f8f8;
+      border-radius: 0px 10px 10px 0px;
+      overflow: auto;
+    }
+
+    #panel ul {
+      padding: 0px;
+    }
+
+    #panel ul li {
+      list-style-type: none;
+      padding: 10px 30px;
+      font-size: 13px;
+      border-bottom: 1px solid gainsboro;
+    }
+
+    .store-name {
+      font-size: 20px;
+    }
+  </style>
+
+  <title>Google Map Store Locator</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm searchbar">
+        <input id="search" />
+        <button id="geolocator">
+          <img src="location.svg" class="location-icon" alt="icon name">
+        </button>
+      </div>
+
+    </div>
+
+    <div class="row no-gutters map-panel-wrapper">
+      <div class="col-8">
+        <div id="map"></div>
+      </div>
+      <div class="col-4">
+        <div id="panel">
+          <ul>
+
+            <li class="store-info">
+              <div>
+                <strong class="store-name">Avia</strong>
+              </div>
+              <div class="store-address">24 Avenue de la liberté</div>
+              <div class="store-phone">0677000000</div>
+              <div class="store-hours">8h - 10h</div>
+            </li>
+
+            <li class="store-info">
+              <div>
+                <strong class="store-name">Avia</strong>
+              </div>
+              <div class="store-address">24 Avenue de la liberté</div>
+              <div class="store-phone">0677000000</div>
+              <div class="store-hours">8h - 10h</div>
+            </li>
+
+            <li class="store-info">
+              <div>
+                <strong class="store-name">Avia</strong>
+              </div>
+              <div class="store-address">24 Avenue de la liberté</div>
+              <div class="store-phone">0677000000</div>
+              <div class="store-hours">8h - 10h</div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="bundle.js"></script>
+
+</html>
