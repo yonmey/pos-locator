@@ -1,4 +1,5 @@
 import Config from "../config/config";
+import Marker from "./Marker";
 
 export default class GeoLocator {
   getCurrentPosition() {
@@ -23,6 +24,9 @@ export default class GeoLocator {
     return this.getCurrentPosition().then(currentPosition => {
       map.setCenter(currentPosition);
       map.setZoom(17);
+
+      let currentPositionMarker = new Marker();
+      currentPositionMarker.createGeoLocatedMarker(currentPosition);
 
       return currentPosition;
     });

@@ -31,4 +31,14 @@ export default class Marker {
 
     return marker;
   }
+
+  createGeoLocatedMarker(position) {
+    if (position instanceof google.maps.LatLng) {
+      return new google.maps.Marker({
+        icon: Config.googleMaps.markers.geoLocationImage,
+        position: position,
+        map: map
+      });
+    }
+  }
 }
