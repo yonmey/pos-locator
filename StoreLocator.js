@@ -7,6 +7,7 @@ import SearchBar from "./components/SearchBar";
 import Panel from "./components/Panel";
 import Config from "./config/config";
 import Marker from "./components/Marker";
+import MarkerClusterer from "./components/MarkerClusterer";
 
 export default class StoreLocator {
   constructor() {
@@ -46,6 +47,10 @@ export default class StoreLocator {
           let marker = new Marker();
           markers.push(marker.createMarker(markerData));
         }
+      });
+
+      new MarkerClusterer(map, markers, {
+        imagePath: Config.googleMaps.markerClustererImagePath
       });
     });
   }

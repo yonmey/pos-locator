@@ -9,7 +9,8 @@ const Config = {
       url:
         "https://datanova.legroupe.laposte.fr/api/records/1.0/search/?dataset=base-de-donnees-locales-guichets-publics-locaux-organismes&rows=3000&facet=typeorga&facet=editeur&facet=accestype&facet=codepost&facet=datemaj&facet=departement",
       iconUrl: "https://www.birttu.com/widget/images/emoticonos-26.png"
-    }
+    },
+    markerClustererImagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   },
   elements: {
     searchBar: "search",
