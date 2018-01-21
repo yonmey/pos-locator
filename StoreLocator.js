@@ -39,11 +39,12 @@ export default class StoreLocator {
   }
 
   createMarkers() {
+    window.markers = [];
     axios.get(Config.googleMaps.markers.url).then(res => {
       res.data.records.forEach((markerData, i) => {
         if (markerData.geometry) {
           let marker = new Marker();
-          marker.createMarker(markerData);
+          markers.push(marker.createMarker(markerData));
         }
       });
     });
@@ -54,13 +55,24 @@ export default class StoreLocator {
     searchBar.init();
   }
 
-  initGeoLocator() {
+  initGeoLocator(bindToPanel = true) {
     document
       .getElementById(Config.elements.geolocator)
       .addEventListener("click", () => {
         const geoLocator = new GeoLocator();
-        geoLocator.locate();
+        let locatedPosition = geoLocator.locate();
+
+        if (bindToPanel) {
+          locatedPosition.then(currentPosition => {
+            this.bindPositionToPanel(currentPosition);
+          });
+        }
       });
+  }
+
+  bindPositionToPanel(position) {
+    const panel = new Panel();
+    panel.showClosestPOS(position);
   }
 
   initResultsPanel() {
