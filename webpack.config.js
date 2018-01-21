@@ -4,7 +4,13 @@ module.exports = {
     filename: "bundle.js"
   },
   module: {
-    rules: [{ test: /\.js$/, use: "babel-loader" }]
+    rules: [
+      { test: /\.js$/, use: "babel-loader" },
+      {
+        test: /\.ejs$/,
+        loader: "ejs-compiled-loader"
+      }
+    ]
   },
   watch: true
 };
